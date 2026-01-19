@@ -1,0 +1,82 @@
+#DAY 1 – Python Basics (Interview Level)
+
+- Mutable vs Immutable
+- List vs Tuple
+- is vs ==
+- id() function
+
+#Interview Questions
+1. Why are lists mutable but tuples immutable?
+2. What happens when you pass a list to a function?
+3. Difference between == and is?
+
+#Coding
+Reverse string without slicing
+Swap two numbers without temp variable
+---------------------------------------------------------------------------------------------
+
+DAY 2 – Functions & Arguments
+
+- *args, **kwargs
+- Default arguments
+- Keyword-only arguments
+
+Interview Questions
+1. When do you use *args?
+2. Why mutable default args are dangerous?
+
+Coding
+# Function to accept any number of arguments
+# Count frequency of words in a sentence
+---------------------------------------------------------------------------------------------
+
+DAY 3 – OOP in Python
+
+- Inheritance
+- Polymorphism
+- Method overriding
+- super()
+
+Interview Questions
+1. Difference between inheritance & composition?
+2. Why use super()?
+
+Coding
+# Create User & Admin classes
+---------------------------------------------------------------------------------------------
+
+DAY 4 – Advanced Python
+
+- Decorators
+- Generators
+- Iterators
+
+Interview Questions
+1. How decorators work internally?
+2. Generator vs normal function?
+
+Coding
+# Write a timing decorator
+# Fibonacci using generator
+---------------------------------------------------------------------------------------------
+DAY 5 – Exceptions & Memory
+
+- Custom exceptions
+- try-except-else-finally
+- Python memory management
+- GIL basics
+
+Interview Questions
+- What is GIL?
+- When finally block runs?
+
+Coding
+# Custom exception for invalid age
+---------------------------------------------------------------------------------------------
+DAY 6 – Coding Round Practice
+- Palindrome
+- Two Sum
+- Find duplicate in list
+- Max occurring character
+- Explain time & space complexity.
+---------------------------------------------------------------------------------------------

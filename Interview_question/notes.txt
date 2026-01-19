@@ -1,0 +1,332 @@
+1. Why are lists mutable but tuples immutable?
+
+- Lists are designed to be changeable (add, remove, update elements)
+- Tuples are designed to be fixed/read-only
+
+Reasons:
+- Lists → flexibility (dynamic data)
+- Tuples → safety + faster performance
+- Tuples can be used as dictionary keys, lists cannot
+
+Example: List
+lst = [1, 2, 3]
+lst[0] = 10      # ✅ allowed
+
+tup = (1, 2, 3)   #Tuples
+# tup[0] = 10    ❌ TypeError
+------------------------------------------------------------------------
+2. What is the difference between "==" vs "is"?
+
+==:
+== is used to compare values. weather the object has same values
+Example:
+a = [1, 2, 3]
+b = [1, 2, 3]
+print(a == b)   # True
+
+is:
+It returns True if both variables point to the same memory location
+x = [1, 2, 3]
+y = x
+z = [1, 2, 3]
+print(x is y)   # True  (same object)
+print(x is z)   # False (different objects)
+---------------------------------------------------------------------------
+3. id() function
+
+Returns the unique identity (memory address) of an object during its lifetime
+Example:
+print(id(a))
+print(id(b))     #output:133226945104320 133226945104320 133226943922688
+---------------------------------------------------------------------------
+4. *args
+
+*args allows a function to accept any number of positional arguments(any number of values)
+args are stored in the form of tupils(*args)--- which are immtable
+Example:
+def values(*args):
+    print(args)
+
+values(1, 2, 3, 4)       #output:(1, 2, 3, 4)
+---------------------------------------------------------------------------
+5. **kwargs
+
+- **kwargs allows a function to accept any number of keyword arguments(key vale pairs)
+- **kwargs are stored in the form of dictionary(**kwargs)---which means key value pairs
+-  Keys must be strings
+Example:
+def value(**kwargs):
+    print(kwargs)
+
+value(name="mahitha",friend="rahul", bond=1)       #output:{'name': 'mahitha', 'friend': 'rahul', 'bond': 1}
+---------------------------------------------------------------------------
+6. Keyword-only arguments → must be named
+
+- the values must be passed by giving the keyword
+Example:
+def details(name,age,*,friend):
+    print(name,age,friend)
+details("mahi",age=23,friend="rahul")    #output:mahi 23 rahul
+---------------------------------------------------------------------------
+7. Why are mutable default arguments dangerous?
+
+- Rule of thumb
+❌ Never use mutable objects (list, dict, set) as default arguments
+✅ Use None and initialize inside the function 
+- Mutable default arguments are dangerous because the same object is reused
+ across function calls, causing unexpected shared state.
+Example:
+def add_item(item, lst=None):
+    if lst is None:
+        lst = []
+    lst.append(item)
+    return lst
+   
+---------------------------------------------------------------------------
+8. what is Inheritance?
+
+- Creating new classes from existing ones
+- new class is called as subclass(child class), exixting class is called superclass(parent class).
+Example:
+class animal:
+    name=""
+    def eat(self):
+        print("animals eat")
+class dog(animal):
+    def sound(self):
+        print("my name is: ", self.name)
+lab=dog()
+lab.name="kikc"
+lab.eat()
+lab.sound()
+---------------------------------------------------------------------------
+9. Method Overriding
+
+- same method is present in both the superclass and subclass    (or)
+- When a child class provides its own implementation of a method already
+ defined in the parent class.
+Example:
+class Animal:
+    name = ""
+    def eat(self):
+        print("I can eat")
+class Dog(Animal):
+    def eat(self):
+        print("I like to eat bones")
+labrador = Dog()
+labrador.eat()
+
+- when we call the eat() method using the object of the Dog subclass, 
+the method of the Dog class is called.
+- This is because the eat() method of the Dog subclass overrides the same
+ method of the Animal superclass.
+---------------------------------------------------------------------------
+10. Polymorphism
+
+Same method name, different behavior depending on the object.  (or)
+Polymorphism allows the same interface to work with different object types.
+Example
+class Dog:
+    def speak(self):
+        print("Bark")
+class Cat:
+    def speak(self):
+        print("Meow")
+def make_sound(animal):
+    animal.speak()
+make_sound(Dog())
+make_sound(Cat())
+---------------------------------------------------------------------------
+11. super
+- super() is used to call methods of the parent class from the child class.
+- used to reuse the parent code
+- To avoid rewriting logic
+- To support multiple inheritance
+Example:
+class animal:
+    def speak(self):
+        print("animals speak")
+class dog(animal):
+    def speak(self):
+        super().speak()
+        print("bark")
+d=dog()
+d.speak()
+---------------------------------------------------------------------------
+Inheritance	           Reusing parent class features
+Polymorphism	       Same method, different behavior
+Overriding	           Child replaces parent method
+super()	               Access parent class methods
+---------------------------------------------------------------------------
+12. composition
+Composition is an OOP concept where one class contains an object of another class
+→ relationship: HAS-A
+Example
+class engine:
+    def start(self):
+        print("car starts with engine")
+class car:
+    def __init__(self):
+        self.engine=engine()
+        print("car will start")
+    def drive(self):
+        self.engine.start()
+        print("car is moving")
+c=car()
+c.drive()
+---------------------------------------------------------------------------
+13. What is an iterator?
+- A generator returns values one by one, not all at once.
+- Think of it like:
+Water tap → gives water when needed, not the whole tank.
+Example:
+nums = [10, 20, 30]
+it = iter(nums)             #Uses iter() and next()
+print(next(it))
+print(next(it))
+print(next(it))
+iter means- iterable... like a loop
+it means- iterator
+next means next element in the list
+---------------------------------------------------------------------------
+14. What is a generator?
+- A generator is an easy way to create an iterator.
+- Think of it like:
+Water tap
+Water comes only when you open it
+
+Example:
+def count_up(n):
+    for i in range(1, n+1):
+        yield i
+g = count_up(3)
+print(next(g))
+print(next(g))
+print(next(g))
+
+- What does yield do?
+  .Returns a value
+  .Pauses function
+  .Saves state
+  .Continues from same place next time
+---------------------------------------------------------------------------
+Iterator	    Object that gives values one by one
+Generator   	Shortcut to create iterator
+yield	        Creates generator
+
+Iterator: Object with __iter__() and __next__()
+Generator: Function that uses yield
+yield: Pauses function and returns value
+---------------------------------------------------------------------------
+Key Reasons to Use Generators
+✅ 1. Save Memory (BIGGEST reason)
+List → stores everything
+Generator → stores only one value at a time
+📌 Perfect for:
+Large files
+Big datasets
+Streams
+---------------------------------------------------------------------------
+Generator vs normal function?
+
+Feature	          Normal Function 	       Generator
+Keyword	          return	               yield
+Values	          One	                   Multiple
+Execution	      Ends after return	       Pauses & resumes
+Memory	          Higher	               Very low
+State	          Not saved	               Saved
+Reusable	      Yes	                   No (single-use)
+
+Example for normal function:
+def normal():
+    return 1
+    return 2   # never executed
+print(normal())
+
+Output: 1
+
+Example for generator:
+def generator():
+    yield 1
+    yield 2
+    yield 3
+g = generator()
+print(next(g))
+print(next(g))
+print(next(g))
+
+Output: 
+1
+2
+3
+---------------------------------------------------------------------------
+15. What is a custom exception?
+- A custom exception is a user-defined error that you create when Python’s
+ built-in exceptions are not enough.
+📌 Example use case exceptios :
+Invalid age
+Weak password
+Low balance
+Unauthorized access
+
+Example:
+class InvalidAgeError(Exception):
+    pass
+def vote():
+    age=int(input("enter your age: "))
+    if age<18:
+        raise InvaldAgeError("you are not eligible to vote")
+    else:
+        print("Eligible to vote")
+try:
+    vote()
+except InvalidAgeError as e:
+    print(e)
+---------------------------------------------------------------------------
+16. try-except-else-finally
+try–except–else–finally is used to handle runtime errors while ensuring 
+important cleanup code always executes.
+try → Code that may raise an exception
+except → Handles the exception if it occurs
+else → Runs only if no exception occurs
+finally → Runs always (used for cleanup)
+
+Example:
+try:
+    a=int(input("enter a num:"))
+    b=int(input("enter a num:"))
+    print(a/b)
+except zerodivisionerror:
+    print("annot be divided by zero")
+else:
+    print("Division successful")
+finally:
+    print("Thank you for using the program")
+---------------------------------------------------------------------------
+17. GIL (Global Interpreter Lock)
+GIL allows only ONE thread to execute Python bytecode at a time.
+- Even if You have 4 CPU cores
+You run 4 threads
+👉 Python still executes one thread at a time.
+---------------------------------------------------------------------------
+What is seen?
+seen is used to keep track of elements that have already appeared while
+ looping through a list.
+- Instead of checking the whole list again and again (slow), we just check:
+Example 
+if num in seen:
+---------------------------------------------------------------------------------------------
+What does enumerate() mean in Python?
+enumerate() is used to loop over a sequence and get both the index and the value
+ at the same time.
+ Code:
+nums = ['a', 'b', 'c']
+for index,value in enumerate(nums):
+    print(index,value)
+
+ output:
+0 a
+1 b
+2 c   
+---------------------------------------------------------------------------------------------
+ 
