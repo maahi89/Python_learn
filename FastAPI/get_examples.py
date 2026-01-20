@@ -4,7 +4,7 @@ app = FastAPI()
 
 # Sample data
 users = {
-    1: {"id": 1, "name": "Mahit", "age": 25, "city": "Delhi"},
+    1: {"id": 1, "name": "Mahitha", "age": 25, "city": "Delhi"},
     2: {"id": 2, "name": "Admin", "age": 30, "city": "Mumbai"},
     3: {"id": 3, "name": "User1", "age": 28, "city": "Bangalore"},
     4: {"id": 4, "name": "User2", "age": 22, "city": "Pune"},
