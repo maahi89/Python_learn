@@ -70,6 +70,8 @@ def get_product(product_id: int):
 @app.get("/products/price")
 def get_by_price(min_price: int = 0, max_price: int = 100000):
     result = [p for p in products if min_price <= p["price"] <= max_price]
+    if not result:
+        raise HTTPException(status_code=404, detail="No products found in price range")
     return {"products": result}
 
 # 9. GET User Count
