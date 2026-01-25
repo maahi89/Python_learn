@@ -27,6 +27,22 @@ class FullUser(BaseModel):
     email: str
     address: Address
 
+class UpdateUserRequest(BaseModel):
+    name: str = None
+    email: str = None
+    age: int = None
+
+class UpdateProductRequest(BaseModel):
+    name: str = None
+    price: float = None
+    quantity: int = None
+
+class UpdatePasswordRequest(BaseModel):
+    username: str
+    old_password: str
+    new_password: str
+
+
 # Database
 users_db = []
 products_db = []
@@ -114,3 +130,35 @@ def create_product_discount(
     products_db.append(new_product)
     return {"message": "Product created with discount", "product": new_product}
     
+
+@app.put("/users/{user_id}")
+def update_user(user_id: int, user_update: UpdateUserRequest):
+    """update user details"""
+    if user_id not in users:
+        raise HTTPException(status_code=404, details="user not found")
+    user=users_db[user_id]
+    if user_update.name is not None:
+        user["name"]=user_update.name
+    if user_update.email is not None:
+        user["email"]=user_update.email
+    if user_update.age is not None:
+        user["age"]=user_update.age
+    return {"message": "User updated successfully", "user": user}
+
+
+@app.delete("/users/{user_id}")
+def delete_user(user_id: int):
+    """delete the user"""
+    if user_id not in users:
+        raise HTTPException(status_code=404, detail="User not found")
+    delete_user=users.pop(user_id)
+    return {"message": "deleted successsfully", "user":delete_user}
+
+@app.delete("/users")
+def delete_all_users(confirm: bool = False):
+    """delete all users with confirmation"""
+    if not  confirm:
+        raise HTTPException(status_code=400, detail="Confirmation required to delete all users")
+    users.clear()
+    return{"message": "All users deleted successfully", "total_users": len(users)}
+
