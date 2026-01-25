@@ -35,7 +35,7 @@ products_db = {
 user_passwords = {
     "admin": "password123",
     "user1": "pass456",
-    "mahit": "secret789"
+    "mahitha": "secret789"
 }
 
 # ============= PUT/UPDATE EXAMPLES =============
