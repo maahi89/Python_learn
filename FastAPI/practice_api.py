@@ -162,3 +162,10 @@ def delete_all_users(confirm: bool = False):
     users.clear()
     return{"message": "All users deleted successfully", "total_users": len(users)}
 
+@app.delete("/product/by_name/{product_name}")
+def delete_product_by_name(product_name:str):
+    """delete product by name"""
+    for product_id, product in list(products_db.items()):
+        if product["name"].lower()==product_name.lower():
+            deleted_product=products_db.pop(product_id)
+            return{"message":"Product deleted successfully", "product":deleted_product}
