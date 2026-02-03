@@ -20,12 +20,12 @@ choice=int(input("enter your choice 1/2/3/4: "))
 a=int(input("Enter a number a= "))
 b=int(input("Enter a number b= "))
 if choice==1:
-    print("result: ", add(a,b))
+    print("result: ", a+b)
 elif choice==2:
-    print("result: ", subtract(a,b))
+    print("result: ", a-b)
 elif choice==3:
-    print("result: ", multiply(a,b))
+    print("result: ", a*b)
 elif choice==4:
-    print("result: ", divide(a,b))
+    print("result: ", a/b)
 else:
     print("invalid Choice")   
