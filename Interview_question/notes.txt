@@ -492,4 +492,18 @@ Keeps user logged in
 if stolen, Dangerous → must be stored securely
 Avoids re-login
 ---------------------------------------------------------------------------------------------
-31. 
+31. Global variables
+“Global variables are declared outside functions and accessible everywhere.
+x = 10   # global variable
+def show():
+    print(x)
+show()
+
+Local variable:
+Local variables are declared inside functions and limited to that function scope.”
+def show():
+    y = 5   # local variable
+    print(y)
+show()
+---------------------------------------------------------------------------------------------
+32. 
