@@ -309,14 +309,14 @@ GIL allows only ONE thread to execute Python bytecode at a time.
 You run 4 threads
 👉 Python still executes one thread at a time.
 ---------------------------------------------------------------------------
-What is seen?
+18. What is seen?
 seen is used to keep track of elements that have already appeared while
  looping through a list.
 - Instead of checking the whole list again and again (slow), we just check:
 Example 
 if num in seen:
 ---------------------------------------------------------------------------------------------
-What does enumerate() mean in Python?
+19. What does enumerate() mean in Python?
 enumerate() is used to loop over a sequence and get both the index and the value
  at the same time.
  Code:
@@ -329,4 +329,181 @@ for index,value in enumerate(nums):
 1 b
 2 c   
 ---------------------------------------------------------------------------------------------
- 
+ 20. Why FastAPI is FAST?
+Because it uses ASGI(asynchornous server gateway Interface) async-await, Starlette for 
+lightweight request handling, and Pydantic for high-speed data validation.
+
+ASGI is a standard that lets Python web apps handle multiple requests at the same time.
+
+What happens in flask and django--
+Request A → waiting for DB
+Request B → waits ❌
+
+but in ASGi 
+User A waiting for DB
+User B comes → FastAPI handles it immediately
+---------------------------------------------------------------------------------------------
+21. What is a Pydantic Model?
+👉 A Pydantic model is a Python class used to:
+Validate data
+Convert data
+Structure data
+FastAPI uses it to check incoming request data automatically.
+🧠 Simple meaning
+“Pydantic makes sure the data you receive is correct before your API logic runs.”
+
+   ""from Pydantic import BaseModel""
+What is BaseModel?
+BaseModel comes from Pydantic
+It gives:
+Validation
+Type conversion
+.dict(), .json()
+---------------------------------------------------------------------------------------------
+22. Dependency Injection(DI)
+Dependency Injection means FastAPI gives your function what it needs, instead
+ of function creating it.
+
+Example:
+from fastapi import Depends
+@app.get("/items")
+def read_items(db = Depends(get_db)):
+    return {"db": db}
+
+FastAPI calls get_db()
+Passes its return value to db
+You did NOT call it manually ✔️    
+- Dependency Injection in FastAPI allows sharing reusable logic like authentication or database 
+connections by letting FastAPI automatically provide dependencies using Depends().
+---------------------------------------------------------------------------------------------
+23.Common HTTP Methods
+
+Method	   Purpose	                  Example
+GET	       Fetch data	              Get user list
+POST	   Create data	              Create new user
+PUT	       Update full data	          Update profile
+PATCH	   Update partial data	      Update email
+DELETE	   Remove data	              Delete user
+
+HTTP methods define the type of operation a client wants to perform on a resource.
+---------------------------------------------------------------------------------------------
+24. What are status codes?
+They tell the client what happened to the request.
+✅ Success
+Code	    Meaning
+200	        OK
+201	        Created
+204	        No Content
+❌ Client Errors
+400	        Bad request
+401	        Unauthorized
+403	        Forbidden
+404     	Not found
+422	        Validation error
+🔥 Server Errors
+500	        Server error
+---------------------------------------------------------------------------------------------
+25. What is pagination?
+Splitting large data into small pages.
+🔹 Why pagination?
+Faster response
+Less load
+Better performance
+
+Example:
+@app.get("/users")
+def get_users(limit: int = 10, offset: int = 0):
+    return users[offset: offset + limit]
+---------------------------------------------------------------------------------------------
+26. What is API versioning?
+Managing changes in APIs without breaking old clients.
+🔹 Why versioning?
+Old apps still work
+Safe upgrades
+Backward compatibility
+---------------------------------------------------------------------------------------------
+27. REST API
+REST API is a stateless, resource-based API that uses HTTP methods to perform CRUD operations.
+---------------------------------------------------------------------------------------------
+28. REST API vs FASTAPI
+- REST is an architectural style that defines how APIs should be designed, while FastAPI 
+ is a Python framework used to implement REST APIs efficiently.
+- REST is an architecture style
+- FastAPI is a framework
+👉 They are NOT competitors
+🧠 Simple One-Line Difference
+- REST → Rules for designing APIs
+- FastAPI → Tool to build REST APIs
+- You use FastAPI to create REST APIs
+
+REST API                      	FastAPI
+Architectural style	            Python web framework
+Defines how API should behave	Helps you build APIs easily
+Language-independent	        Python-based
+Uses HTTP methods	            Implements HTTP methods
+Concept	Implementation          No code	Uses Python code
+---------------------------------------------------------------------------------------------
+29. JWT flow
+JWT - jsonweb token
+- it is used to check you you are after logn 
+ - it is stateless(no data is stored)
+ - fast and scalable
+ - better for rest API
+
+JWT FLOW DIAGRAM
+Client → Login → Server
+Client ← JWT ← Server
+
+Client → Request + JWT → Server
+Server → Verify JWT → Response
+
+JWT FLOW (LOGIN → ACCESS → VERIFY)
+1. User Login - Client sends username & password
+2. Server Verifies Credentials - Check username exists and Check password matches
+ ✔ If valid → create JWT
+3. the server creates a JWT by encoding the header and payload and signing them with
+ a secret key to ensure authenticity and integrity.
+ JWT has 3 parts: HEADER.PAYLOAD.SIGNATURE
+ HEADER (How token is made) - Tells which algorithm is used to sign the token.
+ PAYLOAD (User data) - Contains claims (information).
+ SIGNATURE (Security lock 🔐) - Signature is created using:
+ header + payload + SECRET_KEY
+4. Client Stores JWT
+Client stores token in:
+LocalStorage , SessionStorage , Mobile secure storage 
+5. Client Sends Token in Every Request
+---------------------------------------------------------------------------------------------
+30. Access vs Refresh tokens
+Access tokens are short-lived tokens used to access APIs, while refresh tokens are long-lived
+ tokens used to obtain new access tokens without re-login.
+- Access Token (Short-lived)
+Used to access protected APIs
+Sent with every request
+⏱️ Lifetime: Very short (5–30 minutes)
+if stolen, limited damage
+Proves user is logged in
+Fast verification
+
+- Refresh Token (Long-lived)
+Used to get a new access token
+NOT sent with every request
+⏱️ Lifetime - Long (days or weeks)
+Keeps user logged in
+if stolen, Dangerous → must be stored securely
+Avoids re-login
+---------------------------------------------------------------------------------------------
+31. Global variables
+“Global variables are declared outside functions and accessible everywhere.
+x = 10   # global variable
+def show():
+    print(x)
+show()
+
+Local variable:
+Local variables are declared inside functions and limited to that function scope.”
+def show():
+    y = 5   # local variable
+    print(y)
+show()
+---------------------------------------------------------------------------------------------
+32. 

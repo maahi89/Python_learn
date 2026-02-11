@@ -80,3 +80,42 @@ DAY 6 – Coding Round Practice
 - Max occurring character
 - Explain time & space complexity.
 ---------------------------------------------------------------------------------------------
+DAY 8 – FastAPI Basics
+-FastAPI 
+-GRT, POST, UPDATE(PUT), DELETE(POP)
+
+Interview Questions
+-Why FastAPI is fast?
+What is ASGI?
+
+Coding
+# Create GET & POST endpoints
+---------------------------------------------------------------------------------------------
+Validation & Dependency Injection
+-Pydantic models
+-Dependency Injection
+-Middleware
+---------------------------------------------------------------------------------------------
+DAY 10 – REST API Design
+- HTTP methods
+- Status codes
+- Pagination
+- Versioning
+
+Interview Questions
+-PUT vs PATCH?
+-200 vs 201?
+
+Coding
+# CRUD API with proper status codes
+---------------------------------------------------------------------------------------------
+DAY 11 – Authentication
+- JWT flow
+- Access vs Refresh tokens
+- OAuth2 basics
+
+Interview Questions
+- How JWT works end-to-end?
+- Where do you store tokens?
+---------------------------------------------------------------------------------------------
+

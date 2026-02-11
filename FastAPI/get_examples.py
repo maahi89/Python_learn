@@ -4,7 +4,7 @@ app = FastAPI()
 
 # Sample data
 users = {
-    1: {"id": 1, "name": "Mahit", "age": 25, "city": "Delhi"},
+    1: {"id": 1, "name": "Mahitha", "age": 25, "city": "Delhi"},
     2: {"id": 2, "name": "Admin", "age": 30, "city": "Mumbai"},
     3: {"id": 3, "name": "User1", "age": 28, "city": "Bangalore"},
     4: {"id": 4, "name": "User2", "age": 22, "city": "Pune"},
@@ -70,6 +70,8 @@ def get_product(product_id: int):
 @app.get("/products/price")
 def get_by_price(min_price: int = 0, max_price: int = 100000):
     result = [p for p in products if min_price <= p["price"] <= max_price]
+    if not result:
+        raise HTTPException(status_code=404, detail="No products found in price range")
     return {"products": result}
 
 # 9. GET User Count
