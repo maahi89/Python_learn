@@ -12,6 +12,7 @@ def get_connection():
         database="school"
     )
 
+
 # API to fetch students
 @app.get("/students")
 def get_students():
