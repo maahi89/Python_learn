@@ -506,4 +506,19 @@ def show():
     print(y)
 show()
 ---------------------------------------------------------------------------------------------
-32. 
+32. What is Python?
+Python is a high-level, interpreted, general-purpose programming language
+It is designed to be:
+✅ Easy to read
+✅ Easy to write
+✅ Simple to learn
+✅ Powerful for real-world applications
+Python is used in:
+🌐 Web Development (Django, Flask)
+🤖 Machine Learning & AI
+📊 Data Science
+⚙️ Automation & Scripting
+🎮 Game Development
+☁️ Cloud & DevOps
+---------------------------------------------------------------------------------------------
+33. 
