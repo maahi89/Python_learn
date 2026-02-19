@@ -1,0 +1,41 @@
+### Interviews questions ###
+
+### SQL ###
+
+1. Difference between WHERE and HAVING
+| WHERE                                             | HAVING                             |
+| ------------------------------------------------- | ---------------------------------- |
+| Filters rows **before grouping**                  | Filters records **after GROUP BY** |
+| Cannot use aggregate functions (SUM, COUNT, etc.) | Used with aggregate functions      |
+| Used with SELECT, UPDATE, DELETE                  | Mostly used with GROUP BY          |
+
+
+2. Difference between DELETE, TRUNCATE, DROP
+| DELETE                 | TRUNCATE                      | DROP                                  |
+| ---------------------- | ----------------------------- | ------------------------------------- |
+| Removes specific rows  | Removes all rows              | Deletes entire table                  |
+| Can use WHERE          | No WHERE                      | Removes structure also                |
+| Can rollback (usually) | Cannot rollback (in most DBs) | Cannot rollback                       |
+| Slower                 | Faster                        | Deletes everything (data + structure) |
+
+
+3. What is Primary Key?
+- Uniquely identifies each record in a table
+- Cannot be NULL
+- Cannot have duplicate values
+- Only one primary key per table
+
+4. What is Foreign Key?
+- Creates a relationship between two tables
+- Refers to a primary key in another table
+- Maintains referential integrity
+
+### Python ### 
+
+What is class and object?
+Inheritance types in Python
+Method overloading vs overriding
+Encapsulation and abstraction
+
+
+
