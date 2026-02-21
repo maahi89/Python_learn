@@ -3,21 +3,23 @@
 ### SQL ###
 
 1. Difference between WHERE and HAVING
+------------------------------------------------------------------------------------------
 | WHERE                                             | HAVING                             |
 | ------------------------------------------------- | ---------------------------------- |
 | Filters rows **before grouping**                  | Filters records **after GROUP BY** |
 | Cannot use aggregate functions (SUM, COUNT, etc.) | Used with aggregate functions      |
 | Used with SELECT, UPDATE, DELETE                  | Mostly used with GROUP BY          |
-
+------------------------------------------------------------------------------------------
 
 2. Difference between DELETE, TRUNCATE, DROP
+--------------------------------------------------------------------------------------------------
 | DELETE                 | TRUNCATE                      | DROP                                  |
 | ---------------------- | ----------------------------- | ------------------------------------- |
 | Removes specific rows  | Removes all rows              | Deletes entire table                  |
 | Can use WHERE          | No WHERE                      | Removes structure also                |
 | Can rollback (usually) | Cannot rollback (in most DBs) | Cannot rollback                       |
 | Slower                 | Faster                        | Deletes everything (data + structure) |
-
+--------------------------------------------------------------------------------------------------
 
 3. What is Primary Key?
 - Uniquely identifies each record in a table
@@ -32,10 +34,32 @@
 
 ### Python ### 
 
-What is class and object?
-Inheritance types in Python
-Method overloading vs overriding
-Encapsulation and abstraction
+1. What is class and object?
+## Class :
+- A class is a blueprint or template used to create objects.
+- It defines the structure and behavior of objects by specifying:
+  Attributes (variables)
+  Methods (functions)
+A class itself does not hold actual data — it only defines how objects should behave.
+
+🔹 Key Points to Mention in Interview
+  - Class is a user-defined data type.
+  - It groups data and functions together.
+  - It supports OOP principles.
+  - Memory is not allocated until an object is created.
+
+## Object:
+  - An object is an instance of a class.
+  - It represents a real-world entity and contains actual data.
+
+When an object is created:
+  - Memory is allocated.
+  - Constructor runs.
+  - Object gets its own copy of instance variables.
+
+2. Inheritance types in Python
+3. Method overloading vs overriding
+4. Encapsulation and abstraction
 
 
 
