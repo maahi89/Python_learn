@@ -57,6 +57,31 @@ When an object is created:
   - Constructor runs.
   - Object gets its own copy of instance variables.
 
+
+2. List - 
+- List is set of  mutable items(can be edited later
+- it is ordered(10,20,30,10)
+- It can have duplicate values
+- it is written in square backets[12,23,34,23]
+eg. list.append(22)
+  Tuple-
+- Tuple is set of immutable items(Cannot be edited)
+- Values are in order
+- it can have duplicate values
+- it is written in curly brackets(12,22,34,44)
+  Set-
+- set of unordered items
+- it is written in curly brackets {1,5,3,6,8}
+- items cannot be repeated
+- it is mutable(Can be edited later)
+  Dictionary-
+- Dictionary is written in key-value pairs
+- key must be unique
+- it is written in curly brackets {key : Value}
+- it is mutable
+
+
+
 2. Inheritance types in Python
 3. Method overloading vs overriding
 4. Encapsulation and abstraction
