@@ -59,7 +59,7 @@ When an object is created:
 
 
 2. List - 
-- List is set of  mutable items(can be edited later
+- List is set of  mutable items(can be edited later)
 - it is ordered(10,20,30,10)
 - It can have duplicate values
 - it is written in square backets[12,23,34,23]
