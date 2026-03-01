@@ -14,10 +14,6 @@ print(result)
 # print(add_numbers(1,2,3,4))
 
 
-def kwargs_example(**kwargs):
-    for key, value in kwargs.items():
-        print(f"{key}: {value}")
-kwargs_example(name="Alice", age=30, city="New York")
 
 
 def factorial(n):
