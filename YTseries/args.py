@@ -1,3 +1,7 @@
+# *args uses single * because it packs multiple positional arguments into a tuple
+#  * → collects positional arguments into tuple
+# * → values → tuple
+
 def add(*args):
     return sum(args)
 print(add(1, 2, 3, 4))
