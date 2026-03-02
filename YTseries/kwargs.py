@@ -32,3 +32,11 @@ def create_user(**data):
 create_user(name="mahitha", age=24, email="mahitha@example.com")
 
 
+
+def add_items(items):
+    items.append(100)
+    return items
+new_list=[1,2,3,4]  
+print(add_items(new_list))   #[1, 2, 3, 4, 100]
+
+
