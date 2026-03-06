@@ -309,14 +309,14 @@ GIL allows only ONE thread to execute Python bytecode at a time.
 You run 4 threads
 👉 Python still executes one thread at a time.
 ---------------------------------------------------------------------------
-What is seen?
+18. What is seen?
 seen is used to keep track of elements that have already appeared while
  looping through a list.
 - Instead of checking the whole list again and again (slow), we just check:
 Example 
 if num in seen:
 ---------------------------------------------------------------------------------------------
-What does enumerate() mean in Python?
+19. What does enumerate() mean in Python?
 enumerate() is used to loop over a sequence and get both the index and the value
  at the same time.
  Code:
@@ -329,4 +329,13 @@ for index,value in enumerate(nums):
 1 b
 2 c   
 ---------------------------------------------------------------------------------------------
- 
+ 20. Recurson:
+ Function calling itself. 
+ It keeps calling itself until a stopping condition (base case) is reached.
+ example:
+ def function(n):
+    if base_condition:
+        return value
+    return function(smaller_problem)
+---------------------------------------------------------------------------------------------
+  
