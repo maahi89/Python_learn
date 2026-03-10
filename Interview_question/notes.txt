@@ -349,3 +349,9 @@ You tell the waiter (API) what you want.
 The waiter takes the request to the kitchen (server) and brings back the food (response).
 You don’t go to the kitchen directly — the API handles communication.
 ---------------------------------------------------------------------------------------------
+REST API
+A REST API means Representational State Transfer API.
+Simple meaning
+A REST API is a way for applications to communicate over the internet using HTTP requests.
+It is the most common way frontend and backend talk to each other in modern web apps.
+---------------------------------------------------------------------------------------------
