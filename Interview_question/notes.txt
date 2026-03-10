@@ -355,3 +355,17 @@ Simple meaning
 A REST API is a way for applications to communicate over the internet using HTTP requests.
 It is the most common way frontend and backend talk to each other in modern web apps.
 ---------------------------------------------------------------------------------------------
+FAST API
+FastAPI is a modern Python framework used to build APIs quickly and easily.
+It is mainly used to create REST APIs using Python.
+Simple meaning
+FastAPI = A tool in Python to create APIs for your application.
+
+How it works:
+FastAPI works by receiving HTTP requests, processing them in Python functions, and returning responses (usually JSON).
+
+Why FastAPI is fast
+Uses async programming
+Runs on ASGI servers like Uvicorn
+Lightweight framework
+---------------------------------------------------------------------------------------------
