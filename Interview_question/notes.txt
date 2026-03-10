@@ -338,4 +338,14 @@ for index,value in enumerate(nums):
         return value
     return function(smaller_problem)
 ---------------------------------------------------------------------------------------------
-  
+API
+An API is a way for two applications (software) to talk to each other.
+Example (Easy to understand)
+Imagine a restaurant 🍽️
+You → Customer
+Waiter → API
+Kitchen → Server / System
+You tell the waiter (API) what you want.
+The waiter takes the request to the kitchen (server) and brings back the food (response).
+You don’t go to the kitchen directly — the API handles communication.
+---------------------------------------------------------------------------------------------
