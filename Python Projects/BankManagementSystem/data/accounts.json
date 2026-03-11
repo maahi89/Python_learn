@@ -1,0 +1,27 @@
+{
+    "2406": {
+        "name": "mahi",
+        "password": "mahi",
+        "balance": 99000.0
+    },
+    "4886": {
+        "name": "rahul",
+        "password": "mmaa",
+        "balance": 100000.0
+    },
+    "2083": {
+        "name": "mahi",
+        "password": "mahi",
+        "balance": 900.0
+    },
+    "2468": {
+        "name": "rahulchavan",
+        "password": "rahul",
+        "balance": 0.0
+    },
+    "7471": {
+        "name": "rahulsamat",
+        "password": "samat!@1234",
+        "balance": 1224.0
+    }
+}

@@ -1,0 +1,90 @@
+### Interviews questions ###
+
+### SQL ###
+
+1. Difference between WHERE and HAVING
+------------------------------------------------------------------------------------------
+| WHERE                                             | HAVING                             |
+| ------------------------------------------------- | ---------------------------------- |
+| Filters rows **before grouping**                  | Filters records **after GROUP BY** |
+| Cannot use aggregate functions (SUM, COUNT, etc.) | Used with aggregate functions      |
+| Used with SELECT, UPDATE, DELETE                  | Mostly used with GROUP BY          |
+------------------------------------------------------------------------------------------
+
+2. Difference between DELETE, TRUNCATE, DROP
+--------------------------------------------------------------------------------------------------
+| DELETE                 | TRUNCATE                      | DROP                                  |
+| ---------------------- | ----------------------------- | ------------------------------------- |
+| Removes specific rows  | Removes all rows              | Deletes entire table                  |
+| Can use WHERE          | No WHERE                      | Removes structure also                |
+| Can rollback (usually) | Cannot rollback (in most DBs) | Cannot rollback                       |
+| Slower                 | Faster                        | Deletes everything (data + structure) |
+--------------------------------------------------------------------------------------------------
+
+3. What is Primary Key?
+- Uniquely identifies each record in a table
+- Cannot be NULL
+- Cannot have duplicate values
+- Only one primary key per table
+
+4. What is Foreign Key?
+- Creates a relationship between two tables
+- Refers to a primary key in another table
+- Maintains referential integrity
+
+### Python ### 
+
+1. What is class and object?
+## Class :
+- A class is a blueprint or template used to create objects.
+- It defines the structure and behavior of objects by specifying:
+  Attributes (variables)
+  Methods (functions)
+A class itself does not hold actual data — it only defines how objects should behave.
+
+🔹 Key Points to Mention in Interview
+  - Class is a user-defined data type.
+  - It groups data and functions together.
+  - It supports OOP principles.
+  - Memory is not allocated until an object is created.
+
+## Object:
+  - An object is an instance of a class.
+  - It represents a real-world entity and contains actual data.
+
+When an object is created:
+  - Memory is allocated.
+  - Constructor runs.
+  - Object gets its own copy of instance variables.
+
+
+2. List - 
+- List is set of  mutable items(can be edited later)
+- it is ordered(10,20,30,10)
+- It can have duplicate values
+- it is written in square backets[12,23,34,23]
+eg. list.append(22)
+  Tuple-
+- Tuple is set of immutable items(Cannot be edited)
+- Values are in order
+- it can have duplicate values
+- it is written in curly brackets(12,22,34,44)
+  Set-
+- set of unordered items
+- it is written in curly brackets {1,5,3,6,8}
+- items cannot be repeated
+- it is mutable(Can be edited later)
+  Dictionary-
+- Dictionary is written in key-value pairs
+- key must be unique
+- it is written in curly brackets {key : Value}
+- it is mutable
+
+
+
+2. Inheritance types in Python
+3. Method overloading vs overriding
+4. Encapsulation and abstraction
+
+
+
