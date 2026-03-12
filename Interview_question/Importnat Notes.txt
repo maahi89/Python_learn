@@ -1,11 +1,20 @@
 How to activate .venv
+<<<<<<< HEAD
 .\.venv\Scripts\activate
 ---------------------------
+=======
+.\.venv\Script\activate
+
+>>>>>>> 8dff5a72b37521b7795ede67e420e7f6b8bf9bf2
 How to connect MySQL
 \sql
 
 If it is not connect : \connect root@localhost  
+<<<<<<< HEAD
 ---------------------------
+=======
+
+>>>>>>> 8dff5a72b37521b7795ede67e420e7f6b8bf9bf2
 how o run proect on mian file :
 go to main location and run below command 
  uvicorn main:app --reload 

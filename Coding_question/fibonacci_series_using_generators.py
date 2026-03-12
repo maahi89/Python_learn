@@ -4,6 +4,10 @@ def fibonacci(n):    #Formula (Conceptual)F(n) = F(n-1) + F(n-2)
         yield a
         a,b=b,a+b
 for num in fibonacci (50):
+<<<<<<< HEAD
     print(num) 
 
 print(num)    
+=======
+    print(num)
+>>>>>>> 8dff5a72b37521b7795ede67e420e7f6b8bf9bf2
