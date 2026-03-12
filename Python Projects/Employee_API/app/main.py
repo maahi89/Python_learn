@@ -35,3 +35,7 @@ def get_employee(emp_id: int, db: Session = Depends(get_db)):
 def delete_employee(emp_id: int, db: Session = Depends(get_db)):
     crud.delete_employee(db, emp_id)
     return {"message": "Employee deleted"}
+
+@app.put("/employee/{emp_id}")
+def update_employee(emp_id: int, emp: schemas.EmployeeUpdate, db: Session = Depends(get_db)):
+    return crud.update_employee(db, emp_id, emp)    
