@@ -31,7 +31,6 @@ def get_employee(emp_id: int, db: Session = Depends(get_db)):
     return crud.get_employee(db, emp_id)
 
 
-
 @app.delete("/employee/{emp_id}")
 def delete_employee(emp_id: int, db: Session = Depends(get_db)):
     crud.delete_employee(db, emp_id)
