@@ -32,3 +32,4 @@ def update_employee(db: Session, emp_id: int, emp):
     db.commit()
     db.refresh(emp_db)
     return emp_db
+

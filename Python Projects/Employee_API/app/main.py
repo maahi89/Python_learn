@@ -39,3 +39,8 @@ def delete_employee(emp_id: int, db: Session = Depends(get_db)):
 @app.put("/employee/{emp_id}")
 def update_employee(emp_id: int, emp: schemas.EmployeeUpdate, db: Session = Depends(get_db)):
     return crud.update_employee(db, emp_id, emp)    
+
+
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Employee API"}
