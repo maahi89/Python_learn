@@ -22,14 +22,3 @@ def delete_employee(db: Session, emp_id: int):
     emp = db.query(models.Employee).filter(models.Employee.id == emp_id).first()
     db.delete(emp)
     db.commit()
-
-
-
-def update_employee(db: Session, emp_id: int, emp):
-    emp_db = db.query(models.Employee).filter(models.Employee.id == emp_id).first()
-    for key, value in emp.dict().items():
-        setattr(emp_db, key, value)
-    db.commit()
-    db.refresh(emp_db)
-    return emp_db
-
