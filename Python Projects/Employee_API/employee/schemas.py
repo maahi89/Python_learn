@@ -12,3 +12,8 @@ class EmployeeCreate(BaseModel):
     location: str
     experience: int
     joining_date: str
+
+class EmployeeUpdate(BaseModel):
+    name: str
+    age: int
+    department: str

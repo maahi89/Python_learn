@@ -1,21 +1,53 @@
-How to activate .venv
-<<<<<<< HEAD
-.\.venv\Scripts\activate
----------------------------
-=======
-.\.venv\Script\activate
+FASTAPI PROJECT QUICK GUIDE
+────────────────────────────────
 
->>>>>>> 8dff5a72b37521b7795ede67e420e7f6b8bf9bf2
-How to connect MySQL
-\sql
+1️⃣ Activate Virtual Environment
 
-If it is not connect : \connect root@localhost  
-<<<<<<< HEAD
----------------------------
-=======
+Open the folder containing .venv
 
->>>>>>> 8dff5a72b37521b7795ede67e420e7f6b8bf9bf2
-how o run proect on mian file :
-go to main location and run below command 
- uvicorn main:app --reload 
+Example:
+C:\Users\mahit\OneDrive\Desktop\Learn_python
 
+Command:
+>> .\.venv\Scripts\activate
+
+Deactivate venv:
+>> deactivate
+
+
+2️⃣ Connect to MySQL Database
+
+Start MySQL session:
+>> \sql
+
+If connection fails or session disconnects:
+>> \connect root@localhost
+
+Credentials:
+Username: root
+Password: Mahitha!2002
+
+
+3️⃣ Run the Project
+
+Set terminal path to project folder
+
+Example:
+C:\Users\mahit\OneDrive\Desktop\Learn_python\Python Projects\Employee_API\employee
+
+Run the project from main file:
+>> uvicorn main:app --reload
+
+
+4️⃣ Check API
+
+Default API:
+>> http://localhost:8000/
+
+Check endpoint:
+>> http://localhost:8000/employee/id
+
+Swagger API docs:
+>> http://localhost:8000/docs
+
+────────────────────────────────

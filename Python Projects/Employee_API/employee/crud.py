@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from . import models
-
+import models
+import schemas
 
 def create_employee(db: Session, emp):
     new_emp = models.Employee(**emp.dict())
