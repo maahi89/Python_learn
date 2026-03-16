@@ -22,4 +22,3 @@ def delete_employee(db: Session, emp_id: int):
     emp = db.query(models.Employee).filter(models.Employee.id == emp_id).first()
     db.delete(emp)
     db.commit()
-    
