@@ -2,7 +2,7 @@ Django :
 It is a python framework. used to create websites using python.
 Django is especially helpful for database driven websites.
 Django takes request → processes → returns response
-
+-------------------------------------------------------------
 
 MVT : Model view template 
 Model - The model provides data from the database.
@@ -13,3 +13,5 @@ Sends response
 3. Template - Handles UI (HTML page)
 What user sees
 Displays data
+-------------------------------------------------------------
+
