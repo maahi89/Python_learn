@@ -14,4 +14,7 @@ Sends response
 What user sees
 Displays data
 -------------------------------------------------------------
-
+URL decides where to go
+View decides what to do
+Model decides what data
+Template decides how to show
