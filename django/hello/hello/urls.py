@@ -18,6 +18,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('home.urls')),   # ONLY THIS
+    path('admin/', admin.site.urls),  # this is the default url for admin panel
+    path('', include('home.urls')),   # ' ' - if u clicl any url it will go to home.urls and check for the url pattern there and then it will execute the view function
 ]
