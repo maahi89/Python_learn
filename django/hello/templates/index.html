@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to Django</h1>
+    <p>Hello <b> {{ name }}!</b></p>
+    <p>{{name}}, you are {{ age }} years old.</p>
+    <p>Your hobbies are: {{ hobbies|join:", "}}.</p>
+    <p>your fav colors are:</p>
+    <ul>
+        {% for color in fav_color %}
+            <li> {{ color }} </li>
+        {% endfor %}
+    </ul>
+<h2>Student List</h2>
+
+<ul>
+  {% for student in students %}
+    <li>{{ student.name }} - {{ student.age }} </li>
+  {% endfor %}
+</ul>
+</body>
+</html>
