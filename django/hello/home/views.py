@@ -1,5 +1,7 @@
 from django.shortcuts import render, HttpResponse
-from .models import Student
+from .models import Student , Employee
+
+
 
 def index(request):
     data = {
@@ -7,7 +9,8 @@ def index(request):
         "age": 20,
         "hobbies": ["coding", "reading", "traveling"],
         "fav_color": ["blue", "green", "red"],
-        "students": Student.objects.all() # this will fetch all the students from the database and pass it to the template
+        "students": Student.objects.all(), # this will fetch all the students from the database and pass it to the template
+        "employees": Employee.objects.all() # this will fetch all the employees from the database and pass it to the template
     }
     return render(request, 'index.html', data) # this will look for index.html file in templates folder and render it
 
