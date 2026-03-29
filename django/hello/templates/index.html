@@ -10,18 +10,50 @@
     <p>Hello <b> {{ name }}!</b></p>
     <p>{{name}}, you are {{ age }} years old.</p>
     <p>Your hobbies are: {{ hobbies|join:", "}}.</p>
-    <p>your fav colors are:</p>
+    <h2>your fav colors are:</h2>
     <ul>
         {% for color in fav_color %}
             <li> {{ color }} </li>
         {% endfor %}
     </ul>
-<h2>Student List</h2>
 
-<ul>
+
+<h2>Student List</h2>
+<!-- <ul>
   {% for student in students %}
     <li>{{ student.name }} - {{ student.age }} </li>
-  {% endfor %}
+  {% endfor %} -->
 </ul>
+<table border="2">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+    {% for student in students %}
+    <tr>
+        <td>{{ student.name }}</td>
+        <td>{{ student.age }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<h2>Employee List</h2>
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Salary</th>
+    <th>Designation</th>
+  </tr>
+
+  {% for emp in employees %}
+  <tr>
+    <td>{{ emp.name }}</td>
+    <td>{{ emp.age }}</td>
+    <td>{{ emp.salary }}</td>
+    <td>{{ emp.designation }}</td>
+  </tr>
+  {% endfor %}
+</table>
 </body>
 </html>
