@@ -1,19 +1,46 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from .models import Student , Employee
 
-
-
 def index(request):
+    if request.method == "POST":
+        Employee.objects.create(
+            name=request.POST['name'],
+            age=request.POST['age'],
+            email=request.POST.get('email'),
+            salary=request.POST['salary'],
+            designation=request.POST['designation']
+        )
+        return redirect('home')
+
     data = {
         "name": "Mahitha",
         "age": 20,
         "hobbies": ["coding", "reading", "traveling"],
         "fav_color": ["blue", "green", "red"],
-        "students": Student.objects.all(), # this will fetch all the students from the database and pass it to the template
-        "employees": Employee.objects.all() # this will fetch all the employees from the database and pass it to the template
+        "students": Student.objects.all(),
+        "employees": Employee.objects.all()
     }
-    return render(request, 'index.html', data) # this will look for index.html file in templates folder and render it
 
+    return render(request, 'index.html', data)
+
+def update_employee(request, id):
+    emp = Employee.objects.get(id=id)
+
+    if request.method == "POST":
+        emp.name = request.POST['name']
+        emp.age = request.POST['age']
+        emp.email = request.POST.get('email')
+        emp.salary = request.POST['salary']
+        emp.designation = request.POST['designation']
+        emp.save()
+        return redirect('home')
+
+    return render(request, 'update_employee.html', {'emp': emp})
+
+def delete_employee(request, id):
+    emp = Employee.objects.get(id=id)
+    emp.delete()
+    return redirect('home')
 
 def about(request):
     data = {
