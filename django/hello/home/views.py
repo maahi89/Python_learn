@@ -1,24 +1,26 @@
 from django.shortcuts import render, HttpResponse, redirect
 from .models import Student , Employee
+from .forms import EmployeeForm
 
 def index(request):
     if request.method == "POST":
-        Employee.objects.create(
-            name=request.POST['name'],
-            age=request.POST['age'],
-            email=request.POST.get('email'),
-            salary=request.POST['salary'],
-            designation=request.POST['designation']
-        )
-        return redirect('home')
+        form = EmployeeForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = EmployeeForm()
 
     data = {
-        "name": "Mahitha",
-        "age": 20,
-        "hobbies": ["coding", "reading", "traveling"],
-        "fav_color": ["blue", "green", "red"],
+        "form": form,
+        "employees": Employee.objects.all(),
         "students": Student.objects.all(),
-        "employees": Employee.objects.all()
+
+        # ✅ ADD THESE
+        "name": "Mahitha",
+        "age": 22,
+        "hobbies": ["Coding", "Chess", "Learning"],
+        "fav_color": ["Black", "Blue", "White"]
     }
 
     return render(request, 'index.html', data)
