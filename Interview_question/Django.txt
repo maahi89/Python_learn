@@ -18,3 +18,13 @@ URL decides where to go
 View decides what to do
 Model decides what data
 Template decides how to show
+-------------------------------------------------------------
+How to display list data in Django template?
+We use Django template loop {% for %} to iterate over list and display items dynamically.
+-------------------------------------------------------------
+Types of Forms
+1️⃣ Normal Form
+ You define fields manually
+2️⃣ ModelForm (BEST for you now) ✅
+ Auto-create form from your model
+ -------------------------------------------------------------
