@@ -8,4 +8,9 @@ urlpatterns = [
     path("contact/" , views.contact, name="contact"), # contact page will execute the contact function in views.py
     path('update/<int:id>/', views.update_employee, name='update_employee'),
     path('delete/<int:id>/', views.delete_employee, name='delete_employee'),
+    path('update-student/<int:id>/', views.update_student, name='update_student'),
+    path('delete-student/<int:id>/', views.delete_student, name='delete_student'),
+    path('signup/', views.signup_view, name='signup'),
+    path('login/', views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'),
 ]

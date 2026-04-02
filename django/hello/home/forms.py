@@ -7,18 +7,18 @@ class StudentForm(forms.ModelForm):
         model = Student
         fields = '__all__'
         error_messages = {
-            'name': {'required': 'Student name required ❌'},
-            'contact': {'required': 'Contact required ❌'},
+            'name': {'required': 'Student name required'},
+            'contact': {'required': 'Contact required'},
         }
 
     def clean_contact(self):
         contact = self.cleaned_data.get('contact')
 
         if not contact.isdigit():
-            raise forms.ValidationError("Only numbers allowed ⚠️")
+            raise forms.ValidationError("Only numbers allowed")
 
         if len(contact) != 10:
-            raise forms.ValidationError("Must be 10 digits ⚠️")
+            raise forms.ValidationError("Must be 10 digits")
 
         return contact
 
@@ -28,8 +28,8 @@ class EmployeeForm(forms.ModelForm):
         model = Employee
         fields = '__all__'
         error_messages = {
-            'name': {'required': 'Name is required ❌'},
-            'email': {'invalid': 'Enter valid email ⚠️'},
+            'name': {'required': 'Name is required'},
+            'email': {'invalid': 'Enter valid email'},
         }
 
     def clean_age(self):

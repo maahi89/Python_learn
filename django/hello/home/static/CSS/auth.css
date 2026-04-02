@@ -1,0 +1,60 @@
+/* Background */
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+}
+
+/* Center Box */
+.auth-box {
+    width: 320px;
+    margin: 120px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Heading */
+.auth-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Input */
+.auth-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Button */
+.auth-box button {
+    width: 100%;
+    padding: 10px;
+    background: #1877f2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.auth-box button:hover {
+    background: #0f5dc2;
+}
+
+/* Link */
+.auth-box a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #1877f2;
+    text-decoration: none;
+}
+
+.auth-box a:hover {
+    text-decoration: underline;
+}
