@@ -1,108 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Django App</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+    <div class="container">
+
+    <p>Welcome, {{ request.user.username }} 👋</p>
+
+    <a href="{% url 'logout' %}">Logout</a>
+
+    <!-- rest of your content -->
+    
+</div>
+
+<div class="auth-box">
+
+    <center><h2>Login</h2></center>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <input type="text" name="username" placeholder="Enter Username">
+        <input type="password" name="password" placeholder="Enter Password">
+
+        <button type="submit">Login</button>
+    </form>
+
+    <a href="{% url 'signup' %}">Create account</a>
+
+</div>
+
+
+    <div class="container"></div>
+
     <h1>Welcome to Django</h1>
-    <p>Hello <b> {{ name }}!</b></p>
-    <p>{{name}}, you are {{ age }} years old.</p>
-    <p>Your hobbies are: {{ hobbies|join:", "}}.</p>
-    <h2>your fav colors are:</h2>
+
+    <p>Hello <b>{{ name }}</b>!</p>
+    <p>{{ name }}, you are {{ age }} years old.</p>
+    <p>Your hobbies are: {{ hobbies|join:", " }}.</p>
+
+    <h2>Your Favorite Colors</h2>
     <ul>
         {% for color in fav_color %}
-            <li> {{ color }} </li>
+            <li>{{ color }}</li>
         {% endfor %}
     </ul>
 
+<h2>Add Student</h2>
 
-<h2>Student List</h2>
-</ul>
-<table border="2">
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Name:</label>
+    {{ student_form.name }}
+    <p class="error">{{ student_form.name.errors }}</p>
+
+    <label>Age:</label>
+    {{ student_form.age }}
+    <p class="error">{{ student_form.age.errors }}</p>
+
+    <label>Marks:</label>
+    {{ student_form.marks }}
+    <p class="error">{{ student_form.marks.errors }}</p>
+
+    <label>Contact:</label>
+    {{ student_form.contact }}
+    <p class="error">{{ student_form.contact.errors }}</p>
+
+    <button type="submit" name="student_submit">Add Student</button>
+</form>
+
+
+    <!-- STUDENT TABLE -->
+ <h2>Student List</h2>
+
+<table>
     <tr>
         <th>Name</th>
         <th>Age</th>
-        <th>marks</th>
+        <th>Marks</th>
         <th>Contact</th>
+        <th>Actions</th>
     </tr>
+
     {% for student in students %}
     <tr>
         <td>{{ student.name }}</td>
         <td>{{ student.age }}</td>
         <td>{{ student.marks }}</td>
         <td>{{ student.contact }}</td>
-    </tr>
-    {% endfor %}
-</table>
-<br>
-
-<h2>Add Employee</h2>
-
-<form method="POST">
-    {% csrf_token %}
-
-    <label>Name:</label>
-    {{ form.name }}
-    <p style="color:red;">{{ form.name.errors }}</p>
-
-    <label>Age:</label>
-    {{ form.age }}
-    <p style="color:red;">{{ form.age.errors }}</p>
-
-    <label>Email:</label>
-    {{ form.email }}
-    <p style="color:red;">{{ form.email.errors }}</p>
-
-    <label>Salary:</label>
-    {{ form.salary }}
-    <p style="color:red;">{{ form.salary.errors }}</p>
-
-    <label>Designation:</label>
-    {{ form.designation }}
-    <p style="color:red;">{{ form.designation.errors }}</p>
-
-    {% if form.non_field_errors %}
-        <div style="color:red;">
-            {{ form.non_field_errors }}
-        </div>
-    {% endif %}
-
-    <button type="submit">Add Employee</button>
-</form>
-
-<hr>
-
-<h2>Employee List</h2>
-
-<table border="1" cellpadding="10">
-    <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Email</th>
-        <th>Salary</th>
-        <th>Designation</th>
-        <th>Actions</th>
-    </tr>
-
-    {% for emp in employees %}
-    <tr>
-        <td>{{ emp.name }}</td>
-        <td>{{ emp.age }}</td>
-        <td>{{ emp.email }}</td>
-        <td>{{ emp.salary }}</td>
-        <td>{{ emp.designation }}</td>
         <td>
-        <a href="{% url 'update_employee' emp.id %}">Edit</a> |
-        <a href="{% url 'delete_employee' emp.id %}">Delete</a>
-            
+            <a href="{% url 'update_student' student.id %}">Edit</a> |
+            <a href="{% url 'delete_student' student.id %}">Delete</a>
         </td>
     </tr>
     {% endfor %}
 </table>
+    <!-- EMPLOYEE FORM -->
+    <h2>Add Employee</h2>
 
+    <form method="POST">
+        {% csrf_token %}
 
+        <label>Name:</label>
+        {{ form.name }}
+        <p class="error">{{ form.name.errors }}</p>
 
+        <label>Age:</label>
+        {{ form.age }}
+        <p class="error">{{ form.age.errors }}</p>
+
+        <label>Email:</label>
+        {{ form.email }}
+        <p class="error">{{ form.email.errors }}</p>
+
+        <label>Salary:</label>
+        {{ form.salary }}
+        <p class="error">{{ form.salary.errors }}</p>
+
+        <label>Designation:</label>
+        {{ form.designation }}
+        <p class="error">{{ form.designation.errors }}</p>
+
+        {% if form.non_field_errors %}
+            <div class="error">
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+
+        <button type="submit">Add Employee</button>
+    </form>
+
+    <hr>
+
+    <!-- EMPLOYEE TABLE -->
+    <h2>Employee List</h2>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Salary</th>
+            <th>Designation</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for emp in employees %}
+        <tr>
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.age }}</td>
+            <td>{{ emp.email }}</td>
+            <td>{{ emp.salary }}</td>
+            <td>{{ emp.designation }}</td>
+            <td>
+                <a href="{% url 'update_employee' emp.id %}">Edit</a> |
+                <a href="{% url 'delete_employee' emp.id %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
 </body>
 </html>
