@@ -1,0 +1,193 @@
+body {
+    font-family: Arial;
+    background: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.container {
+    width: 400px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.task-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.task-form input {
+    flex: 1;
+    padding: 10px;
+}
+
+.add-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-card {
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;   /* 🔥 vertical layout */
+    gap: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.task-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.task-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.edit-btn {
+    background: #2196F3;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.delete-btn {
+    background: #f44336;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+
+.search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.filters a {
+    text-decoration: none;
+    padding: 5px 10px;
+    background: #ddd;
+    border-radius: 5px;
+}
+
+.task-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+/* Priority colors */
+.high {
+    color: red;
+}
+
+.medium {
+    color: orange;
+}
+
+.low {
+    color: green;
+}
+
+
+/* 🧾 Edit Page Container */
+.edit-container {
+    width: 400px;
+    margin: 80px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.edit-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form inputs */
+.edit-container input,
+.edit-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* Button */
+.edit-container button {
+    width: 100%;
+    padding: 10px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.edit-container button:hover {
+    background: #45a049;
+}
+
+/* Back link */
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #555;
+}
+
+.back-link:hover {
+    color: black;
+}
+
+/* Priority colors (reuse same classes) */
+.priority.high {
+    color: red;
+}
+
+.priority.medium {
+    color: orange;
+}
+
+.priority.low {
+    color: green;
+}
