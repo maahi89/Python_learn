@@ -1,0 +1,17 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="edit-container">
+    <h2>Edit Task ✏️</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.title }}
+        {{ form.due_date }}
+        {{ form.priority }}
+
+        <button type="submit">Update Task</button>
+    </form>
+
+    <a href="{% url 'index' %}" class="back-link">⬅ Back</a>
+</div>

@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<div class="container">
+    <h2>✨ My To-Do List</h2>
+
+    <form method="POST" class="task-form">
+        {% csrf_token %}
+        {{ form.title }}
+        <button class="add-btn">Add</button>
+    </form>
+
+    <div class="task-list">
+        {% for task in tasks %}
+            <div class="task-card">
+
+                <div class="task-title">
+                    <input type="checkbox"
+                        onclick='window.location.href="{% url "complete" task.id %}";'
+                        {% if task.completed %}checked{% endif %}>
+
+                    <span class="{% if task.completed %}completed{% endif %}">
+                        {{ task.title }}
+                    </span>
+                </div>
+
+                <div class="task-actions">
+                    <a href="{% url 'edit' task.id %}" class="edit-btn">Edit</a>
+                    <a href="{% url 'delete' task.id %}" class="delete-btn">Delete</a>
+                </div>
+
+            </div>
+            
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>
