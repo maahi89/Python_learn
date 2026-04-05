@@ -23,7 +23,7 @@
 
                 <div class="task-title">
                     <input type="checkbox"
-                        onclick='window.location.href="{% url "complete" task.id %}";'
+                        onclick='window.location.href="{% url "complete" task.id %}"'
                         {% if task.completed %}checked{% endif %}>
 
                     <span class="{% if task.completed %}completed{% endif %}">
