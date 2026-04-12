@@ -5,6 +5,9 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from .views import register, profile
 from .views import add_to_cart, remove_from_cart, view_cart
 from .views import checkout
+from django.urls import path
+from . import views
+
 
 router = DefaultRouter()
 router.register('products', ProductViewSet)
@@ -21,4 +24,7 @@ urlpatterns = [
     path('cart/', view_cart),
     path('checkout/', checkout),
     path('wishlist/add/', add_to_wishlist),
+    path('', views.product_list),
+    path('cart/', views.cart),
 ]
+

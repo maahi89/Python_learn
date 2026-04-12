@@ -13,6 +13,9 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAdminUser
 from .models import Cart, CartItem, Order, OrderItem
+from django.shortcuts import render
+from .models import Product
+
 
 
 class ProductViewSet(ModelViewSet):
@@ -141,3 +144,11 @@ def add_to_wishlist(request):
         product_id=request.data.get('product_id')
     )
     return Response({"message": "Added to wishlist"})
+
+
+def product_list(request):
+    products = Product.objects.all()
+    return render(request, 'store/product_list.html', {'products': products})
+
+def cart(request):
+    return render(request, 'store/cart.html')

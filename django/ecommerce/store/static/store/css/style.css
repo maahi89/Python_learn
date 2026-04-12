@@ -1,0 +1,37 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    padding: 20px;
+}
+
+.products {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+button {
+    background: orange;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
