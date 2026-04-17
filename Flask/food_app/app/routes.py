@@ -1,6 +1,8 @@
 from flask import Blueprint, jsonify, request
 from .models import Food, Order
 from .db import db
+from .models import User
+from flask import request, jsonify
 
 main = Blueprint('main', __name__)
 
@@ -13,11 +15,16 @@ def home():
 @main.route('/add-food', methods=['POST'])
 def add_food():
     data = request.json
+    print("DATA:", data)   # 👈 add this
+
+    if not data:
+        return {"error": "No data received"}, 400
+
     food = Food(name=data['name'], price=data['price'])
     db.session.add(food)
     db.session.commit()
 
-    return jsonify({"message": "Food added"})
+    return {"message": "Food added"}
 
 # Get all food
 @main.route('/foods')
