@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Orders Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📦 Orders Dashboard</h1>
+
+    <div class="top-bar">
+
+        <form
+            class="search-form"
+            method="get"
+            action="/orders"
+        >
+
+            <input
+                type="text"
+                name="search"
+                placeholder="Search customer"
+            >
+
+            <button type="submit">
+                Search
+            </button>
+
+        </form>
+
+        <form
+            class="filter-form"
+            method="get"
+            action="/orders"
+        >
+
+            <select name="status_filter">
+
+                <option value="">
+                    All Status
+                </option>
+
+                <option value="Pending">
+                    Pending
+                </option>
+
+                <option value="Preparing">
+                    Preparing
+                </option>
+
+                <option value="Delivered">
+                    Delivered
+                </option>
+
+                <option value="Cancelled">
+                    Cancelled
+                </option>
+
+            </select>
+
+            <button type="submit">
+                Filter
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Customer</th>
+
+                    <th>Food</th>
+
+                    <th>Quantity</th>
+
+                    <th>Status</th>
+
+                    <th>Update Status</th>
+
+                    <th>Edit</th>
+
+                    <th>Delete</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {% for order in orders %}
+
+                <tr>
+
+                    <td>{{ order.id }}</td>
+
+                    <td>{{ order.customer }}</td>
+
+                    <td>{{ order.food }}</td>
+
+                    <td>{{ order.quantity }}</td>
+
+                    <td>
+
+                        <span class="status-badge">
+                            {{ order.status }}
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <form
+                            class="status-form"
+                            action="/change-status/{{ order.id }}"
+                            method="post"
+                        >
+
+                            <select name="status">
+
+                                <option value="Pending">
+                                    Pending
+                                </option>
+
+                                <option value="Preparing">
+                                    Preparing
+                                </option>
+
+                                <option value="Delivered">
+                                    Delivered
+                                </option>
+
+                                <option value="Cancelled">
+                                    Cancelled
+                                </option>
+
+                            </select>
+
+                            <button type="submit">
+                                Update
+                            </button>
+
+                        </form>
+
+                    </td>
+
+                    <td>
+
+                        <a
+                            class="edit-btn"
+                            href="/edit-order/{{ order.id }}"
+                        >
+                            Edit
+                        </a>
+
+                    </td>
+
+                    <td>
+
+                        <a
+                            class="delete-btn"
+                            href="/delete-order/{{ order.id }}"
+                        >
+                            Delete
+                        </a>
+
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <a class="back-btn" href="/">
+        ← Back To Home
+    </a>
+
+</div>
+
+</body>
+
+</html>

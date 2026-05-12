@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Edit Order</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+
+</head>
+
+<body>
+
+<div class="container small-container">
+
+    <h1>✏️ Edit Order</h1>
+
+    <form
+        action="/update-order/{{ order.id }}"
+        method="post"
+    >
+
+        <label>
+            Food Item
+        </label>
+
+        <input
+            type="text"
+            name="food"
+            value="{{ order.food }}"
+            required
+        >
+
+        <label>
+            Quantity
+        </label>
+
+        <input
+            type="number"
+            name="quantity"
+            value="{{ order.quantity }}"
+            required
+        >
+
+        <button type="submit">
+            Update Order
+        </button>
+
+    </form>
+
+    <a class="back-btn" href="/orders">
+        ← Back To Orders
+    </a>
+
+</div>
+
+</body>
+
+</html>
