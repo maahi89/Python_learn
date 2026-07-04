@@ -1,0 +1,75 @@
+﻿Install run started 06/16/2026 00:45:28
+=== Project: D:\python_learn\Coding_question\Python_learn\Flask\food_app ===
+SKIP: no .venv
+=== Project: D:\python_learn\Coding_question\Python_learn\Python Projects\Employee_API ===
+SKIP: no .venv
+=== Project: D:\python_learn\Coding_question\Python_learn\Python Projects\school_app ===
+SKIP: no .venv
+=== Project: D:\python_learn\Coding_question\Python_learn\Python Projects\Weather_App ===
+SKIP: no .venv
+=== Project: D:\python_learn\Flask\food_app ===
+Using python: D:\python_learn\Flask\food_app\.venv\Scripts\python.exe
+python.exe : Could not find platform independent libraries <prefix>
+At line:1 char:635
++ ... ncoding utf8; try { & "$python" -m pip install -r "$req" 2>&1 | Out-F ...
++                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Could not find ...raries <prefix> 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+[notice] A new release of pip is available: 26.1.1 -> 26.1.2
+[notice] To update, run: 
+D:\python_learn\Flask\food_app\.venv\Scripts\python.exe -m pip install 
+--upgrade pip
+ERROR: Could not open requirements file: [Errno 2] No such file or directory: 
+'requirements.txt'
+=== Project: D:\python_learn\Python Projects\Employee_API ===
+Using python: D:\python_learn\Python Projects\Employee_API\.venv\Scripts\python.exe
+python.exe : Could not find platform independent libraries <prefix>
+At line:1 char:635
++ ... ncoding utf8; try { & "$python" -m pip install -r "$req" 2>&1 | Out-F ...
++                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Could not find ...raries <prefix> 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+[notice] A new release of pip is available: 26.1.1 -> 26.1.2
+[notice] To update, run: D:\python_learn\Python 
+Projects\Employee_API\.venv\Scripts\python.exe -m pip install --upgrade pip
+ERROR: Could not open requirements file: [Errno 2] No such file or directory: 
+'requirements.txt'
+=== Project: D:\python_learn\Python Projects\school_app ===
+Using python: D:\python_learn\Python Projects\school_app\.venv\Scripts\python.exe
+python.exe : Could not find platform independent libraries <prefix>
+At line:1 char:635
++ ... ncoding utf8; try { & "$python" -m pip install -r "$req" 2>&1 | Out-F ...
++                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Could not find ...raries <prefix> 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+[notice] A new release of pip is available: 26.1.1 -> 26.1.2
+[notice] To update, run: D:\python_learn\Python 
+Projects\school_app\.venv\Scripts\python.exe -m pip install --upgrade pip
+ERROR: Could not open requirements file: [Errno 2] No such file or directory: 
+'requirements.txt'
+=== Project: D:\python_learn\Python Projects\Weather_App ===
+Using python: D:\python_learn\Python Projects\Weather_App\.venv\Scripts\python.exe
+python.exe : Could not find platform independent libraries <prefix>
+At line:1 char:635
++ ... ncoding utf8; try { & "$python" -m pip install -r "$req" 2>&1 | Out-F ...
++                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Could not find ...raries <prefix> 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+[notice] A new release of pip is available: 26.1.1 -> 26.1.2
+[notice] To update, run: D:\python_learn\Python 
+Projects\Weather_App\.venv\Scripts\python.exe -m pip install --upgrade pip
+ERROR: Could not open requirements file: [Errno 2] No such file or directory: 
+'requirements.txt'
+Install run finished 06/16/2026 00:45:31
