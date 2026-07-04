@@ -1,0 +1,116 @@
+supervised Learning -
+Supervised learning is a type of Machine Learning where the computer learns from examples with correct answers.
+Imagine teaching a child:
+After seeing many examples, the child learns:
+Red round fruit → probably apple
+Yellow long fruit → probably banana
+
+Two Main Types of Supervised Learning
+1. Classification
+Predicting categories/classes.
+Examples 1:
+Spam or not spam
+Dog or cat
+Fraud or not fraud
+Example 2:
+Email classifier:
+“Win money now!” → Spam
+“Meeting at 5 PM” → Not spam
+
+2. Regression
+Predicting numerical values.
+Examples:
+House price
+Temperature
+Salary prediction
+Output is a number.
+Example:
+Predicting salary based on experience.
+
+---------------------------------------------------------------
+Unsupervised Learning -
+Unsupervised learning is a type of Machine Learning where the computer learns patterns from data without correct answers (labels).
+Example
+Imagine you have a basket of mixed fruits:
+Apples
+Bananas
+Oranges
+But nobody tells the computer their names.
+The computer observes:
+Color
+Shape
+Size
+Then it groups similar fruits together automatically.
+
+Main Types of Unsupervised Learning
+1. Clustering
+Grouping similar data points together.
+Example:
+Customer segmentation
+Grouping similar movies
+Organizing photos
+
+22. Association
+Finding relationships between items.
+Example:
+“People who buy bread also buy butter.”
+Used in recommendation systems.
+Example:
+Amazon product suggestions
+
+3. Dimensionality Reduction
+Reducing complex data into simpler form.
+Used for:
+Data visualization
+Faster training
+Noise reduction
+
+---------------------------------------------------------------
+Regression -
+Regression is a supervised learning technique used to predict a continuous numerical value by learning the relationship between input data (features) and output data (target values).
+Regression is used when we want to predict a number.
+
+Examples:
+Predicting salary based on experience
+Predicting house price based on size
+
+---------------------------------------------------------------
+Classification -
+Classification is a supervised learning technique used to predict a category or class label.
+Example
+Suppose you have a fruit model.
+Input:
+Color = Yellow
+Shape = Long
+Output:
+Banana
+The output is a category ("Banana"), so this is classification.
+---------------------------------------------------------------
+Overfitting
+Overfitting is when a model learns the training data too specifically and struggles to handle new data.
+the model memorizes examples instead of understanding the pattern.
+Example
+Imagine you're preparing for an exam.
+You understand the concepts.
+When a new question appears, you can solve it.
+Overfitting
+You memorize all answers from previous papers.
+In the exam:
+Same questions → Excellent score
+New questions → Struggle
+That's exactly what overfitting is.
+Why Does Overfitting Happen?
+Common reasons:
+1. Too Little Data
+The model doesn't see enough examples.
+2. Model Is Too Complex
+A very powerful model tries to memorize everything.
+---------------------------------------------------------------
+Training and Testing —
+When building a Machine Learning model, we usually split the data into two parts:
+Training Data → Used to teach the model.
+Testing Data → Used to check if the model learned correctly
+---------------------------------------------------------------
+Feature Engineering
+Feature Engineering is the process of creating, selecting, or transforming data so that a machine learning model can learn better patterns.
+---------------------------------------------------------------
